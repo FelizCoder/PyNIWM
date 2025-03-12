@@ -1,0 +1,14 @@
+numpy
+pandas
+scikit-learn
+tensorflow
+lightgbm
+xgboost
+matplotlib
+pyyaml
+imbalanced-learn
+ruamel.yaml
+tqdm
+seaborn
+scikeras
+ipywidgets
