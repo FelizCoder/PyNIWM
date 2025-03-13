@@ -5,19 +5,20 @@
 # --- Data configurations --------------------------------------------------------------------------
 
 # which data set to use
-dataset: REU2016_set2.csv
+dataset: /home/felix/tubCloud/Shared/2024_KunzeFelix_MSc/_DATA/STREaM/Classifier_Data/features_all.csv
+
+cvResultsDir: ./cv_results
 
 features:
 - Duration
 - Peak
 - Volume
-- Mode
+- Mean
+- Variance
 - Hour
-- Weekday
-- Weekend
 
 target:
-- SumAs
+- Label
 
 train_size: -1 # size training data to be used (set = -1 for full dataset; other values for fast debugging)
 frac_tst: 0.25
@@ -35,11 +36,11 @@ n-folds: 5
 
 # specify one or multiple classification models (RandomForest, LightGBM, XGBoost, ANN):
 algorithm:
-- RandomForestClassifier
+# - RandomForestClassifier
 # - LogisticRegression
-- XGBClassifier
+# - XGBClassifier
 - LGBMClassifier
-- ANNClassifier
+# - ANNClassifier
 
 # set hyperparameters for selected model(s)
 hyperParams:
@@ -107,6 +108,9 @@ hyperParams:
         objective:
             - 'multi:softmax'
     LGBMClassifier:
+        device:
+            - 'cpu'
+            # - 'gpu'
         max_depth:
             - 3
             - 5
