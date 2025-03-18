@@ -300,3 +300,8 @@ def get_confusion_matrix(y_test, y_hat, plot=True, labels=None):
         ax.set_ylim(b, t)  # update the ylim(bottom, top) values
 
     return cmNorm, ax
+
+
+def map_to_category(y: int, categories: list):
+    y = int(y)
+    return categories[y - 1]
