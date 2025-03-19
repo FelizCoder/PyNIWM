@@ -5,7 +5,7 @@
 # --- Data configurations --------------------------------------------------------------------------
 
 # which data set to use
-dataset: /home/felix/tubCloud/Shared/2024_KunzeFelix_MSc/_DATA/STREaM/Classifier_Data/features_all.csv
+dataset: D:\MA Thesis\_DATA\Classifier_Data\features_all.csv
 
 cvResultsDir: ./cv_results
 
@@ -14,7 +14,6 @@ features:
 - Peak
 - Volume
 - Mean
-- Variance
 - Hour
 
 target:
